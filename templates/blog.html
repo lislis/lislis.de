@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+
+{% block content %}
+  {% set posts = get_section(path="blog/_index.md") %}
+
+  {% for page in posts.pages %}
+    {{page.title}}
+  {% endfor %}
+{% endblock content %}

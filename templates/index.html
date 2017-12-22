@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charste="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="{{ config.extra.author }}">
+    {% block meta %}
+      <meta name="description" content="{{ config.description }}">
+      <meta property="og:title" content="{{ config.title }}">
+      <meta property="og:type" content="website">
+      <meta property="og:image" content="{{ get_url(path="logo.jpg") }}">
+      <meta property="og:url" content="{{ get_url(path="/") }}">
+      <meta property="og:description" content="{{ config.description }}">
+      <meta property="og:site_name" content="{{ config.title }}">
+    {% endblock meta %}
+
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path="favicon-192x192.png") }}">
+    <link rel="icon" type="image/png" sizes="128x128" href="{{ get_url(path="favicon-128x128.png") }}">
+
+    <link rel="stylesheet" href="{{ get_url(path="app.css") }}" />
+    <link href="{{ get_url(path="rss.xml") }}" rel="feed" type="application/rss+xml" title="{{ config.title }}" />
+  </head>
+  <body>
+
+    <header role="banner">
+      <div class="l-inner">
+        <nav role="navigation">
+          <ul>
+            <li><a href="{{ get_url(path="/") }}">lislis.de</a></li>
+            <li><a href="{{ get_url(path="/blog") }}">blog</a></li>
+            <li><a href="{{ get_url(path="/games") }}">games</a></li>
+            <li><a href="{{ get_url(path="/talks") }}">talks</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="l-inner">
+        {% block content %}
+
+        <div>
+          <h1>Hey, I'm Lisa</h1>
+          <p>I'm a full-stack developer with focus on frontend and interfaces.</p>
+          <p>But I also do other things besides wage-labour.</p>
+        </div>
+
+        <div>
+          <p>Email is the best way to reach me, just holler at <a href="mailto:mail@lislis.de?subject=hey Lisa!">mail at lislis dot de</a>. Preferably you'd encrypt your email. Here is my <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x53dcb8642d183a51">public key</a>.</p>
+          <p>If you don't know what that is you might want to try out a <a href="https://www.cryptoparty.in/berlin">cryptoparty</a>.</p>
+
+          <p>Otherwise you can find my code on <a href="">GitHub</a> and myself on decentralised social media such as <a href="https://wk3.org/u/lis">diaspora*</a> and <a href="https://toot.cat/@lislis">mastodon</a>.</p>
+        </div>
+
+        <div>
+          <p>Sometimes I feel like writing down thoughts.</p>
+          {% set posts = get_section(path="blog/_index.md") %}
+          <ul>
+            {% for page in posts.pages %}
+            <li><a href="{{ get_url(path=page.path)}}">{{page.title}}</a></li>
+            {% endfor %}
+          </ul>
+          <p>You can read all posts <a href="{{ get_url(path="/blog") }}">on my blog</a>.</p>
+        </div>
+
+        <div>
+          <p>I create hardly playable video games at game jams, hackathons and other occations.</p>
+          {% set posts = get_section(path="games/_index.md") %}
+          <ul>
+            {% for page in posts.pages %}
+            <li><a href="{{ get_url(path=page.path)}}">{{page.title}}</a></li>
+            {% endfor %}
+          </ul>
+          <p>You can browse all games <a href="{{ get_url(path="/games") }}">on the games page</a>.</p>
+        </div>
+
+        <div>
+          <p>I'm involved in and maintain a couple of open source projects.</p>
+          <ul>
+            <li><a href="">Slam Alphas</a></li>
+            <li><a href="">RoRganize.it</a></li>
+            <li><a href="">diaspora*</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p>Some meetups and conferences even accept my talk proposals.</p>
+          {% set posts = get_section(path="talks/_index.md") %}
+          <ul>
+            {% for page in posts.pages %}
+            <li><a href="{{ get_url(path=page.path)}}">{{page.title}}</a></li>
+            {% endfor %}
+          </ul>
+          <p>You can watch all videos <a href="{{ get_url(path="/talks") }}">in the talks section</a>.</p>
+        </div>
+
+        {% endblock content %}
+      </div>
+    </main>
+
+    <footer>
+      <div class="l-inner">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://lislis.de" property="cc:attributionName" rel="cc:attributionURL">lislis</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      </div>
+    </footer>
+  </body>
+</html>
