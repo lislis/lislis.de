@@ -1,7 +1,7 @@
 +++
 title =  "Gutenberg init"
 description = ""
-date = "2017-12-22"
+#date = "2017-12-22"
 draft = true
 +++
 

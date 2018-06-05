@@ -7,13 +7,13 @@
 
     <meta name="author" content="{{ config.extra.author }}">
     {% block meta %}
-      <meta name="description" content="{{ config.description }}">
-      <meta property="og:title" content="{{ config.title }}">
-      <meta property="og:type" content="website">
-      <meta property="og:image" content="{{ get_url(path="logo.jpg") }}">
-      <meta property="og:url" content="{{ get_url(path="/") }}">
-      <meta property="og:description" content="{{ config.description }}">
-      <meta property="og:site_name" content="{{ config.title }}">
+    <meta name="description" content="{{ config.description }}">
+    <meta property="og:title" content="{{ config.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ get_url(path="logo.jpg") }}">
+    <meta property="og:url" content="{{ get_url(path="/") }}">
+    <meta property="og:description" content="{{ config.description }}">
+    <meta property="og:site_name" content="{{ config.title }}">
     {% endblock meta %}
 
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
@@ -21,91 +21,87 @@
     <link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path="favicon-192x192.png") }}">
     <link rel="icon" type="image/png" sizes="128x128" href="{{ get_url(path="favicon-128x128.png") }}">
 
-    <link rel="stylesheet" href="{{ get_url(path="app.css") }}" />
+    <link href="{{ config.base_url }}/main.css" rel="stylesheet">
     <link href="{{ get_url(path="rss.xml") }}" rel="feed" type="application/rss+xml" title="{{ config.title }}" />
   </head>
   <body>
+    <div class="wrapper">
+      <main>
+        <div class="l-inner">
+          {% block content %}
 
-    <header role="banner">
-      <div class="l-inner">
-        <nav role="navigation">
-          <ul>
-            <li><a href="{{ get_url(path="/") }}">lislis.de</a></li>
-            <li><a href="{{ get_url(path="/blog") }}">blog</a></li>
-            <li><a href="{{ get_url(path="/games") }}">games</a></li>
-            <li><a href="{{ get_url(path="/talks") }}">talks</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+          <h1>Ohai, I'm Lisa!</h1>
 
-    <main>
-      <div class="l-inner">
-        {% block content %}
+          <div class="index">
+            <div class="a">
+              <p>I'm a human living in lovely Berlin, Germany.</p>
+              <p>I earn a living as a full-stack developer with focus on frontend. This is probably why you're here.</p>
+              <p>Besides wage-labour I also enjoy creative coding and making video games besides.<br>
+                Whenever possible I advocate FLOSS software, decentralized infrastructure and encryption. I also consider myself fairly political, just <abbr title="for your information">fyi<abbr>.</p>
+            </div>
 
-        <div>
-          <h1>Hey, I'm Lisa</h1>
-          <p>I'm a full-stack developer with focus on frontend and interfaces.</p>
-          <p>But I also do other things besides wage-labour.</p>
+            <div class="b">
+              <p>Email is usually the best way to reach me, just holler at <code>mail at lislis dot de</code>.</p>
+              <p>If you want to get into my cool book you should encrypt your email. <br>Here is my <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x53dcb8642d183a51">public key</a>.</br> In all seriousness though, you should encrypt your email anyway.</p>
+              <p>In case you don't know what encryption is or how it works you might want to try out a <a href="https://www.cryptoparty.in/berlin">CryptoParty</a>.</p>
+            </div>
+
+            <div class="d">
+              <p>You can find my code on either <a href="#">GitHub</a> or <a href="#">GitLab</a> and myself on decentralised social media such as <a href="https://wk3.org/u/lis">diaspora*</a> and <a href="https://toot.cat/@lislis">Mastodon</a>.</p>
+              <p>On the internet and sometimes in the physical world I go by the name <code>lislis</code>.</p>
+            </div>
+
+            <div class="e">
+              <p>There is <a href="{{ get_url(path="/blog") }}">a blog</a> where I sometimes write things down. Be aware it's not always about technical things.</p>
+            </div>
+
+            <div class="f">
+              <p>I love creating hardly playable video games at game jams, hackathons and other occations.</p>
+              <p>You can browse <a href="{{ get_url(path="/games") }}">some games on the games page</a>.</p>
+            </div>
+
+            <div class="c">
+              <p>I'm involved in/ help out with/ maintain a couple of open source projects. They're super cool, definitely check them out!</p>
+              <ul>
+                <li><a href="">Slam Alphas</a> is a blog and database for women in the German speaking poetry slam scene.</li>
+                <li><a href="">RoRganize.it</a> is a platform for finding and orginizing programming study groups. Made at <a href="#">Rubycorns</a>.</li>
+                <li><a href="">diaspora*</a> is decentralized social networking.</li>
+                <li><a href="#">punks.email</a> is a local e-mail and personal instrastructure provider.</li>
+              </ul>
+              <p>My brain also makes me output a lot of <a href="#">other side projects</a>.</p>
+            </div>
+
+            <div class="g">
+              <p>Some meetups and conferences even accept my talk proposals and let me speak in front of people.</p>
+              <p>Here is a list of <a href="{{ get_url(path="/talks") }}">all my talks</a> for your enjoyment.</p>
+            </div>
+
+            <div class="h">
+              <p>I'm also a member of the feminist hackspace <a href="">Heart of Code</a>. If you're town come by, say hi, and have a beverage with us!</p>
+            </div>
+          </div>
+
+          {% endblock content %}
         </div>
+      </main>
 
+      <footer>
         <div>
-          <p>Email is the best way to reach me, just holler at <a href="mailto:mail@lislis.de?subject=hey Lisa!">mail at lislis dot de</a>. Preferably you'd encrypt your email. Here is my <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x53dcb8642d183a51">public key</a>.</p>
-          <p>If you don't know what that is you might want to try out a <a href="https://www.cryptoparty.in/berlin">cryptoparty</a>.</p>
-
-          <p>Otherwise you can find my code on <a href="">GitHub</a> and myself on decentralised social media such as <a href="https://wk3.org/u/lis">diaspora*</a> and <a href="https://toot.cat/@lislis">mastodon</a>.</p>
+          <nav>
+            <ul>
+              <li><a href="{{ get_url(path="/") }}">lislis.de</a></li>
+              <li><a href="{{ get_url(path="/blog") }}">blog</a></li>
+              <li><a href="{{ get_url(path="/games") }}">games</a></li>
+              <li><a href="{{ get_url(path="/games") }}">side projects</a></li>
+              <li><a href="{{ get_url(path="/talks") }}">talks</a></li>
+              <li><a href="#">Impressum / Datenschutz</a></li>
+            </ul>
+          </nav>
         </div>
-
         <div>
-          <p>Sometimes I feel like writing down thoughts.</p>
-          {% set posts = get_section(path="blog/_index.md") %}
-          <ul>
-            {% for page in posts.pages %}
-            <li><a href="{{ get_url(path=page.path)}}">{{page.title}}</a></li>
-            {% endfor %}
-          </ul>
-          <p>You can read all posts <a href="{{ get_url(path="/blog") }}">on my blog</a>.</p>
+          <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://lislis.de" property="cc:attributionName" rel="cc:attributionURL">lislis</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> unless otherwise noted.</p>
         </div>
-
-        <div>
-          <p>I create hardly playable video games at game jams, hackathons and other occations.</p>
-          {% set posts = get_section(path="games/_index.md") %}
-          <ul>
-            {% for page in posts.pages %}
-            <li><a href="{{ get_url(path=page.path)}}">{{page.title}}</a></li>
-            {% endfor %}
-          </ul>
-          <p>You can browse all games <a href="{{ get_url(path="/games") }}">on the games page</a>.</p>
-        </div>
-
-        <div>
-          <p>I'm involved in and maintain a couple of open source projects.</p>
-          <ul>
-            <li><a href="">Slam Alphas</a></li>
-            <li><a href="">RoRganize.it</a></li>
-            <li><a href="">diaspora*</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p>Some meetups and conferences even accept my talk proposals.</p>
-          {% set posts = get_section(path="talks/_index.md") %}
-          <ul>
-            {% for page in posts.pages %}
-            <li><a href="{{ get_url(path=page.path)}}">{{page.title}}</a></li>
-            {% endfor %}
-          </ul>
-          <p>You can watch all videos <a href="{{ get_url(path="/talks") }}">in the talks section</a>.</p>
-        </div>
-
-        {% endblock content %}
-      </div>
-    </main>
-
-    <footer>
-      <div class="l-inner">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://lislis.de" property="cc:attributionName" rel="cc:attributionURL">lislis</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>

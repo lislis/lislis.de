@@ -2,4 +2,30 @@
 
 {% block content %}
 
+{% if page.previous %}Prev: {{ page.previous.permalink }}{% endif %}
+| <a href="{{ get_url(path="/blog") }}">blog</a> |
+{% if page.next %}Next: {{ page.next.permalink }}{% endif %}
+
+<article>
+  <h1>{{page.title}}</h1>
+  <time>{{page.date}}</time>
+  <p></p>
+  <p>{{page.word_count}} {{page.reading_time}}</p>
+
+  {{page.tags}}
+
+  {{page.category}}
+
+  <div>
+    {{ page.content | safe }}
+  </div>
+
+</article>
+
+<div>
+  {% if page.previous %}Prev: {{ page.previous.permalink }}{% endif %}
+  | <a href="{{ get_url(path="/blog") }}">blog</a> |
+  {% if page.next %}Next: {{ page.next.permalink }}{% endif %}
+</div>
+
 {% endblock content %}
