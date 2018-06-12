@@ -1,9 +1,16 @@
 {% extends "index.html" %}
 
+{% block title %}
+talks - lislis.de
+{% endblock title %}
+
+{% block heading %}
+<h1>{{section.title}}</h1>
+{% endblock heading %}
+
+
+
 {% block content %}
-
-<h1>Things I talk about on stage</h1>
-
 {% set posts = get_section(path="talks/_index.md") %}
 
 <ul>

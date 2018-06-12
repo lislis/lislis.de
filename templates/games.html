@@ -1,8 +1,15 @@
 {% extends "index.html" %}
 
+{% block title %}
+games - lislis.de
+{% endblock title %}
+
+{% block heading %}
+<h1>{{section.title}}</h1>
+{% endblock heading %}
+
 {% block content %}
 
-<h1>{{section.title}}</h1>
 {% set posts = get_section(path="games/_index.md") %}
 
 <ul>

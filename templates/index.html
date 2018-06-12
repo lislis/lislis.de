@@ -27,7 +27,9 @@
   <body>
     <div class="wrapper">
       <header class="header">
+        {% block heading %}
         <h1>Ohai, I'm Lisa!</h1>
+        {% endblock heading %}
       </header>
       <main class="main">
           {% block content %}
