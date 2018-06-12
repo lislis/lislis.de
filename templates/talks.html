@@ -1,9 +1,18 @@
 {% extends "index.html" %}
 
 {% block content %}
-  {% set posts = get_section(path="talks/_index.md") %}
 
+<h1>Things I talk about on stage</h1>
+
+{% set posts = get_section(path="talks/_index.md") %}
+
+<ul>
   {% for page in posts.pages %}
-    {{page.title}}
+  <li><a href="{{ page.permalink }}">{{page.title}}</a><br>
+    {{page.extra.conference}} {{page.extra.year}}<br>
+    <a href="{{page.extra.slides}}">Slides</a> | <a href="{{page.extra.code}}">Code</a>
+  </li>
   {% endfor %}
+</ul>
+
 {% endblock content %}
