@@ -1,0 +1,62 @@
+::selection
+  color: $black
+  background: $highlight
+
+::-moz-selection
+  color: $black
+  background: $highlight
+
+body
+  padding: 2rem
+  font-size: 20px
+  font-family: sans-serif
+  line-height: 1.75
+  background-color: $black
+  color: $yellow
+
+a
+  color:#cc6633
+  text-decoration: none
+  border-bottom: 1px solid currentColor
+  &:hover,
+  &:active
+    border-width: 2px
+
+small
+  font-size: 0.7em
+
+code
+  padding: 0.3em
+  background-color: rgba($yellow,0.2)
+  border-radius: 3px
+
+ul
+  padding: 0 0 0 1.5rem
+  li
+    list-style: none
+    &:before
+      position: relative
+      left: -1.5rem
+      margin-right: -1rem
+    &:nth-of-type(4n + 1)
+      &:before
+        content: '♠'
+    &:nth-of-type(4n + 2)
+      &:before
+        content: '♣'
+    &:nth-of-type(4n + 3)
+      &:before
+        content: '♥'
+    &:nth-of-type(4n + 4)
+      &:before
+        content: '♦'
+
+hr
+  height: 2em
+  line-height: 2.2
+  border: none
+  color: $yellow
+  text-align: center
+  &:before
+    content: "♠ ♣ ♥ ♦"
+    display: block
