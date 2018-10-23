@@ -1,10 +1,15 @@
 .wrapper
   display: grid
-  grid-column-gap: 8rem
-  grid-template-columns: 1fr 300px
-  grid-template-rows: 120px 1fr 170px
+  grid-column-gap: 4re
+  grid-template-columns: 1fr 200px
+  grid-template-rows: 300px 1fr 170px
   min-height: 100vh
   padding: 2rem
+
+  @media (min-width: 600px)
+    grid-column-gap: 8rem
+    grid-template-columns: 1fr 300px
+    grid-template-rows: 120px 1fr 170px
 
 .header
   grid-area: 1 / 1

@@ -3,7 +3,7 @@ title = "Interactive Art"
 [extra]
 conference = ":ClojureD"
 year = 2018
-slides = ""
+slides = 0
 code="https://github.com/lislis/talk-interactive-art"
 +++
 

@@ -12,9 +12,13 @@
   <p></p>
   <p>{{page.word_count}} {{page.reading_time}}</p>
 
-  {{page.tags}}
+  {% if page.tags  %}
+    {{page.tags}}
+  {% endif %}
 
-  {{page.category}}
+  {% if page.category %}
+    {{page.category}}
+  {% endif %}
 
   <div>
     {{ page.content | safe }}
