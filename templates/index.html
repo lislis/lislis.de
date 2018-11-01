@@ -1,108 +1,59 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% extends "base.html" %}
 
-    <meta name="author" content="{{ config.extra.author }}">
-    {% block meta %}
-    <meta name="description" content="{{ config.description }}">
-    <meta property="og:title" content="{{ config.title }}">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="{{ get_url(path="logo.jpg") }}">
-    <meta property="og:url" content="{{ get_url(path="/") }}">
-    <meta property="og:description" content="{{ config.description }}">
-    <meta property="og:site_name" content="{{ config.title }}">
-    {% endblock meta %}
+{% block title %}{{ config.title }}{% endblock title %}
 
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+{% block heading %}
+  <h1>Ohai, I'm Lisa!</h1>
+{% endblock heading %}
 
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path="favicon-192x192.png") }}">
-    <link rel="icon" type="image/png" sizes="128x128" href="{{ get_url(path="favicon-128x128.png") }}">
+{% block content %}
+<div class="index">
+  <div class="a">
+    <p>I'm a human living in lovely Berlin, Germany.</p>
+    <p>I earn a living as a full-stack developer with focus on frontend. This is probably why you're here.</p>
+    <p>Besides wage-labour I also enjoy creative coding and making video games.<br>
+      Whenever possible I advocate FLOSS software, decentralized infrastructure and encryption. I also consider myself fairly political, just <abbr title="for your information">fyi<abbr>.</p>
+  </div>
 
-    <link href="{{ config.base_url }}/main.css" rel="stylesheet">
-    <link href="{{ get_url(path="rss.xml") }}" rel="feed" type="application/rss+xml" title="{{ config.title }}" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        {% block heading %}
-        <h1>Ohai, I'm Lisa!</h1>
-        {% endblock heading %}
-      </header>
-      <main class="main">
-          {% block content %}
-          <div class="index">
-            <div class="a">
-              <p>I'm a human living in lovely Berlin, Germany.</p>
-              <p>I earn a living as a full-stack developer with focus on frontend. This is probably why you're here.</p>
-              <p>Besides wage-labour I also enjoy creative coding and making video games.<br>
-                Whenever possible I advocate FLOSS software, decentralized infrastructure and encryption. I also consider myself fairly political, just <abbr title="for your information">fyi<abbr>.</p>
-            </div>
+  <div class="b">
+    <p>Email is usually the best way to reach me, just holler at <code>mail at lislis dot de</code>.</p>
+    <p>If you want to get into my cool book you should encrypt your email. <br>Here is my <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x53dcb8642d183a51">public key</a>.</br> In all seriousness though, you should encrypt your email.</p>
+    <p>In case you don't know what email encryption is or how it works you might want to try out a <a href="https://www.cryptoparty.in/berlin">CryptoParty</a>.</p>
+  </div>
 
-            <div class="b">
-              <p>Email is usually the best way to reach me, just holler at <code>mail at lislis dot de</code>.</p>
-              <p>If you want to get into my cool book you should encrypt your email. <br>Here is my <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x53dcb8642d183a51">public key</a>.</br> In all seriousness though, you should encrypt your email.</p>
-              <p>In case you don't know what email encryption is or how it works you might want to try out a <a href="https://www.cryptoparty.in/berlin">CryptoParty</a>.</p>
-            </div>
+  <div class="d">
+    <p>You can find my code on either <a href="#">GitHub</a> or <a href="#">GitLab</a> and myself on decentralised social media such as <a href="https://wk3.org/u/lis">diaspora*</a> and <a href="https://toot.cat/@lislis">Mastodon</a>.</p>
+    <p>On the internet and sometimes in the physical world I go by the name <code>lislis</code>.</p>
+  </div>
 
-            <div class="d">
-              <p>You can find my code on either <a href="#">GitHub</a> or <a href="#">GitLab</a> and myself on decentralised social media such as <a href="https://wk3.org/u/lis">diaspora*</a> and <a href="https://toot.cat/@lislis">Mastodon</a>.</p>
-              <p>On the internet and sometimes in the physical world I go by the name <code>lislis</code>.</p>
-            </div>
+  <div class="e">
+    <p>There is <a href="{{ get_url(path="/blog") }}">a blog</a> where I sometimes write things down. Be aware it's not always about technical things.</p>
+  </div>
 
-            <div class="e">
-              <p>There is <a href="{{ get_url(path="/blog") }}">a blog</a> where I sometimes write things down. Be aware it's not always about technical things.</p>
-            </div>
+  <div class="d">
+    <p>I love creating hardly playable video games at game jams, hackathons and other occations.</p>
+    <p>You can browse <a href="{{ get_url(path="/games") }}">some games on the games page</a>.</p>
+  </div>
 
-            <div class="d">
-              <p>I love creating hardly playable video games at game jams, hackathons and other occations.</p>
-              <p>You can browse <a href="{{ get_url(path="/games") }}">some games on the games page</a>.</p>
-            </div>
+  <div class="c">
+    <p>I'm involved in/ help out with/ maintain a couple of open source projects. They're super cool, definitely check them out!</p>
+    <ul>
+      <li><a href="#">Slam Alphas</a> is a blog and database for women in the German speaking poetry slam scene.</li>
+      <li><a href="#">RoRganize.it</a> is a platform for finding and orginizing programming study groups. Made at <a href="#">Rubycorns</a>.</li>
+      <li><a href="#">punks.email</a> is a local e-mail and personal instrastructure provider.</li>
+      <li><a href="#">feminizi.de</a> is a database of femicides (aka feminicides) in Germany.</li>
+    </ul>
+    <p>My brain also makes me output a lot of <a href="#">other side projects</a>.</p>
+  </div>
 
-            <div class="c">
-              <p>I'm involved in/ help out with/ maintain a couple of open source projects. They're super cool, definitely check them out!</p>
-              <ul>
-                <li><a href="#">Slam Alphas</a> is a blog and database for women in the German speaking poetry slam scene.</li>
-                <li><a href="#">RoRganize.it</a> is a platform for finding and orginizing programming study groups. Made at <a href="#">Rubycorns</a>.</li>
-                <li><a href="#">punks.email</a> is a local e-mail and personal instrastructure provider.</li>
-                <li><a href="#">feminizi.de</a> is a database of femicides (aka feminicides) in Germany.</li>
-              </ul>
-              <p>My brain also makes me output a lot of <a href="#">other side projects</a>.</p>
-            </div>
+  <div class="e">
+    <p>Some meetups and conferences even accept my talk proposals and let me speak in front of people.</p>
+    <p>Here is a list of <a href="{{ get_url(path="/talks") }}">all my talks</a> for your enjoyment.</p>
+  </div>
 
-            <div class="e">
-              <p>Some meetups and conferences even accept my talk proposals and let me speak in front of people.</p>
-              <p>Here is a list of <a href="{{ get_url(path="/talks") }}">all my talks</a> for your enjoyment.</p>
-            </div>
+  <div class="d">
+    <p>I'm also a member of the feminist hackspace <a href="">Heart of Code</a>. If you're town come by, say hi, and have a beverage with us!</p>
+  </div>
+</div>
 
-            <div class="d">
-              <p>I'm also a member of the feminist hackspace <a href="">Heart of Code</a>. If you're town come by, say hi, and have a beverage with us!</p>
-            </div>
-          </div>
-
-          {% endblock content %}
-      </main>
-      <nav class="nav">
-        <ul>
-          <li><a href="{{ get_url(path="/") }}">lislis.de</a></li>
-          <li><a href="{{ get_url(path="/blog") }}">blog</a></li>
-          <li><a href="{{ get_url(path="/games") }}">games</a></li>
-          <li><a href="{{ get_url(path="/side-projects") }}">side projects</a></li>
-          <li><a href="{{ get_url(path="/talks") }}">talks</a></li>
-        </ul>
-      </nav>
-      <footer class="footer">
-        <nav class="ta-c">
-          <a href="#"><small>Impressum</small></a>
-          <a href="#"><small>GDPR</small></a>
-        </nav>
-        <hr>
-        <div class="sidenote">
-          <p>This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://lislis.de" property="cc:attributionName" rel="cc:attributionURL">lislis</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a> unless otherwise noted.</p>
-        </div>
-      </footer>
-    </div>
-  </body>
-</html>
+{% endblock content %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="{{ config.extra.author }}">
+    {% block meta %}
+    <meta name="description" content="{{ config.description }}">
+    <meta property="og:title" content="{{ config.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ get_url(path="logo.jpg") }}">
+    <meta property="og:url" content="{{ get_url(path="/") }}">
+    <meta property="og:description" content="{{ config.description }}">
+    <meta property="og:site_name" content="{{ config.title }}">
+    {% endblock meta %}
+
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path="favicon-192x192.png") }}">
+    <link rel="icon" type="image/png" sizes="128x128" href="{{ get_url(path="favicon-128x128.png") }}">
+
+    <link href="{{ config.base_url }}/main.css" rel="stylesheet">
+    <link href="{{ get_url(path="rss.xml") }}" rel="feed" type="application/rss+xml" title="{{ config.title }}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        {% block heading %}{% endblock heading %}
+      </header>
+      <main class="main">
+          {% block content %}{% endblock content %}
+      </main>
+      <nav class="nav">
+        <ul>
+          <li><a href="{{ get_url(path="/") }}">lislis.de</a></li>
+          <li><a href="{{ get_url(path="/blog") }}">blog</a></li>
+          <li><a href="{{ get_url(path="/games") }}">games</a></li>
+          <li><a href="{{ get_url(path="/side-projects") }}">side projects</a></li>
+          <li><a href="{{ get_url(path="/talks") }}">talks</a></li>
+        </ul>
+      </nav>
+      <footer class="footer">
+        <nav class="ta-c">
+          <a href="#"><small>Impressum</small></a>
+          <a href="#"><small>GDPR</small></a>
+        </nav>
+        <hr>
+        <div class="sidenote">
+          <p>This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://lislis.de" property="cc:attributionName" rel="cc:attributionURL">lislis</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a> unless otherwise noted.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

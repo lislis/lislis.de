@@ -1,3 +1,6 @@
 +++
-template = "blog.html"
+title = "Blog"
+
+[extra]
+tagline = "Where I write words"
 +++

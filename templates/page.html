@@ -1,13 +1,21 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - lislis.de{% endblock title %}
+
+{% block heading %}
+<h1>{{ page.title }}</h1>
+{% endblock heading %}
+
 
 {% block content %}
 
+<aside>
 {% if page.previous %}Prev: <a href="{{ page.previous.permalink }}">{{page.previous.title}}</a>{% endif %}
 | <a href="{{ get_url(path="/blog") }}">blog</a> |
 {% if page.next %}Next: <a href="{{ page.next.permalink }}">{{ page.next.title }}</a>{% endif %}
+</aside>
 
 <article>
-  <h1>{{page.title}}</h1>
   <time>{{page.date}}</time>
   <p></p>
   <p>{{page.word_count}} {{page.reading_time}}</p>
