@@ -6,11 +6,20 @@ default_language = "en"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
+# Whether to generate a RSS feed automatically
+generate_rss = true
+
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Gutenberg
 highlight_code = true
 
 title = "lislis.de"
+
+taxonomies = [
+  {name = "tags", rss = true},
+  {name = "categories", rss = true},
+]
+
 
 [extra]
 # Put all your custom variables here

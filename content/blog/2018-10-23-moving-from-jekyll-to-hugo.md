@@ -3,6 +3,9 @@ title =  "Moving from Jekyll to Hugo"
 description = ""
 date = 2018-10-23
 draft = true
+[taxonomies]
+tags = ["jekyll", "hugo", "static site generator"]
+category = ["blog"]
 +++
 
 

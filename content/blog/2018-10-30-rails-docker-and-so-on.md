@@ -3,6 +3,9 @@ title =  "Rails and Docker and so on"
 description = "And Puma and NGINX"
 date = 2018-10-30
 draft = true
+[taxonomies]
+tags = ["rails", "docker", "nginx", "puma"]
+categories = ["blog"]
 +++
 
 
