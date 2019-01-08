@@ -17,10 +17,19 @@ title = "lislis.de"
 
 taxonomies = [
   {name = "tags", rss = true},
-  {name = "categories", rss = true},
+  {name = "category", rss = true},
 ]
-
 
 [extra]
 # Put all your custom variables here
 author = "lislis"
+github = "https://github.com/lislis"
+gitlab = "https://gitlab.com/lislis"
+diaspora = "https://wk3.org/u/lis"
+mastodon = "https://toot.cat/@lislis"
+heartofcode = "http://heartofcode.org"
+slamalphas = "https://slamalphas.org"
+rorganize = "https://rorganize.it"
+rubycorns = "https://rubycorns.club"
+cryptoparty = "https://www.cryptoparty.in/berlin"
+keyid = "0x53dcb8642d183a51"

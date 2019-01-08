@@ -1,31 +1,38 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} - lislis.de{% endblock title %}
+{% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
+
+{% block meta %}
+<meta name="description" content="{{ config.description }}">
+<meta property="og:title" content="{{ config.title }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ get_url(path="logo.jpg") }}">
+<meta property="og:url" content="{{ get_url(path="/") }}">
+<meta property="og:description" content="{{ config.description }}">
+<meta property="og:site_name" content="{{ config.title }}">
+{% endblock meta %}
 
 {% block heading %}
-<h1>{{ page.title }}</h1>
+{% if page.taxonomies.category %}
+{% for cat in page.taxonomies.category %}
+<h1>{{ cat | capitalize }}</h1>
+{% endfor %}
+{% endif %}
 {% endblock heading %}
 
-
 {% block content %}
-
-<aside>
-{% if page.previous %}Prev: <a href="{{ page.previous.permalink }}">{{page.previous.title}}</a>{% endif %}
-| <a href="{{ get_url(path="/blog") }}">blog</a> |
-{% if page.next %}Next: <a href="{{ page.next.permalink }}">{{ page.next.title }}</a>{% endif %}
-</aside>
-
 <article>
-  <time>{{page.date}}</time>
-  <p></p>
+  <h1>{{ page.title }}</h1>
+  {% if page.date %}
+  <time datetime="{{page.date}}">{{page.date | date(format="%B %d, %Y")}}</time>
+  {% endif %}
+  {% if page.taxonomies.tags %}
+  in
+  {% for tag in page.taxonomies.tags %}
+  {% set tagname = tag %}
+  <a href="">#{{ tag }}</a>
+  {% endfor %}
+  {% endif %}
   <p>{{page.word_count}} {{page.reading_time}}</p>
-
 </article>
-
-<div>
-  {% if page.previous %}Prev: <a href="{{ page.previous.permalink }}">{{page.previous.title}}</a>{% endif %}
-  | <a href="{{ get_url(path="/blog") }}">blog</a> |
-  {% if page.next %}Next: <a href="{{ page.next.permalink }}">{{ page.next.title }}</a>{% endif %}
-</div>
-
 {% endblock content %}

@@ -4,7 +4,7 @@ date = 2017-02-28
 draft = false
 [taxonomies]
 tags = []
-categories = ["talk"]
+category = ["talk"]
 [extra]
 conference = "RuhrJS"
 year = 2017

@@ -5,7 +5,7 @@ date = 2018-06-12
 draft = false
 [taxonomies]
 tags = ["python", "scraping", "movies"]
-categories = ["blog"]
+category = ["blog"]
 +++
 
 beautiful soup and selenium

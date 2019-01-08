@@ -5,7 +5,7 @@ date = 2018-06-12
 draft = false
 [taxonomies]
 tags = ["gutenberg", "static site generator"]
-categories = ["blog"]
+category = ["blog"]
 +++
 
 I once read that a developer's blog only lists two kinds of post: apologies for not blogging more often and announcing that they've re-written the blog with a different framework, library, engine.

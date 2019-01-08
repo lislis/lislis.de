@@ -7,5 +7,5 @@ web = "https://lislis.de/projects/freiluftkino/"
 code = "https://gitlab.com/lislis/open-air-cinema-berlin"
 [taxonomies]
 tags = ["movies", "scraping"]
-categories = ["project"]
+category = ["project"]
 +++

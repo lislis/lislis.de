@@ -3,57 +3,47 @@
 {% block title %}{{ config.title }}{% endblock title %}
 
 {% block heading %}
-  <h1>Ohai, I'm Lisa!</h1>
+<h1>Ohai, I'm Lisa!</h1>
 {% endblock heading %}
 
 {% block content %}
 <div class="index">
   <div class="a">
-    <p>I'm a human living in lovely Berlin, Germany.</p>
+    <p>On the internet and sometimes in the physical world I go by the name <code>lislis</code>.</p>
     <p>I earn a living as a full-stack developer with focus on frontend. This is probably why you're here.</p>
-    <p>Besides wage-labour I also enjoy creative coding and making video games.<br>
-      Whenever possible I advocate FLOSS software, decentralized infrastructure and encryption. I also consider myself fairly political, just <abbr title="for your information">fyi<abbr>.</p>
+    <p>Besides wage-labour I also enjoy creative coding and making video games.</p>
   </div>
 
   <div class="b">
     <p>Email is usually the best way to reach me, just holler at <code>mail at lislis dot de</code>.</p>
-    <p>If you want to get into my cool book you should encrypt your email. <br>Here is my <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x53dcb8642d183a51">public key</a>.</br> In all seriousness though, you should encrypt your email.</p>
-    <p>In case you don't know what email encryption is or how it works you might want to try out a <a href="https://www.cryptoparty.in/berlin">CryptoParty</a>.</p>
+    <p>If you want to get into my cool book you should encrypt your email. <br>Here is my <a href="https://pgp.mit.edu/pks/lookup?op=get&search={{ config.extra.keyid }}">public key</a>.</br> In all seriousness though, you should encrypt your email.</p>
+    <p>In case you don't know what email encryption is or how it works you might want to try out a <a href="{{ config.extra.cryptoparty }}">CryptoParty</a>.</p>
   </div>
 
   <div class="d">
-    <p>You can find my code on either <a href="#">GitHub</a> or <a href="#">GitLab</a> and myself on decentralised social media such as <a href="https://wk3.org/u/lis">diaspora*</a> and <a href="https://toot.cat/@lislis">Mastodon</a>.</p>
-    <p>On the internet and sometimes in the physical world I go by the name <code>lislis</code>.</p>
+    <p>Advocating open source software, decentralized infrastructure and encryption is something of a hobby, too.</p>
+    <p>You can find my code on either <a href="{{ config.extra.github }}">GitHub</a> or <a href="{{ config.extra.gitlab }}">GitLab</a> and myself on decentralised social media such as <a href="{{ config.extra.diaspora}}">diaspora*</a> and <a href="{{ config.extra.mastodon }}">Mastodon</a>.</p>
   </div>
 
   <div class="e">
-    <p>There is <a href="{{ get_url(path="/blog") }}">a blog</a> where I sometimes write things down. Be aware it's not always about technical things.</p>
+    <p>I try to regularly write <a href="{{ get_taxonomy_url(kind="category", name="blog") }}">on my blog</a>. More or less successfully.</p>
+    <p>Sometimes I create imcomplete video games at game jams or hackathons. You can browse <a href="{{ get_taxonomy_url(kind="category", name="game") }}">some of my games here</a>.</p>
+    <p>Some meetups and conferences let me speak in front of people. Here is a list of <a href="{{ get_taxonomy_url(kind="category", name="talk") }}">my talks</a> for your enjoyment.</p>
   </div>
 
   <div class="d">
-    <p>I love creating hardly playable video games at game jams, hackathons and other occations.</p>
-    <p>You can browse <a href="{{ get_url(path="/games") }}">some games on the games page</a>.</p>
+    <p>I'm also a member of the feminist hackspace <a href="{{ config.extra.heartofcode }}">Heart of Code</a>. If you're town come by, say hi, and have a beverage with us!</p>
   </div>
 
   <div class="c">
-    <p>I'm involved in/ help out with/ maintain a couple of open source projects. They're super cool, definitely check them out!</p>
+    <p>I'm involved in or help out with a couple of projects. They're super cool, definitely check them out!</p>
     <ul>
-      <li><a href="#">Slam Alphas</a> is a blog and database for women in the German speaking poetry slam scene.</li>
-      <li><a href="#">RoRganize.it</a> is a platform for finding and orginizing programming study groups. Made at <a href="#">Rubycorns</a>.</li>
-      <li><a href="#">punks.email</a> is a local e-mail and personal instrastructure provider.</li>
-      <li><a href="#">feminizi.de</a> is a database of femicides (aka feminicides) in Germany.</li>
+      <li><a href="{{ config.extra.slamalphas }}">Slam Alphas</a> is a blog and database for women in the German speaking poetry slam scene.</li>
+      <li><a href="{{ config.extra.rorganize }}">RoRganize.it</a> is a platform for finding and orginizing programming study groups. Made at <a href="{{ config.extra.rubycorns }}">Rubycorns</a>.</li>
     </ul>
-    <p>My brain also makes me output a lot of <a href="#">other side projects</a>.</p>
+    <p>My brain also makes me output a lot of <a href="{{ get_taxonomy_url(kind="category", name="project") }}">other side projects</a>.</p>
   </div>
 
-  <div class="e">
-    <p>Some meetups and conferences even accept my talk proposals and let me speak in front of people.</p>
-    <p>Here is a list of <a href="{{ get_url(path="/talks") }}">all my talks</a> for your enjoyment.</p>
-  </div>
-
-  <div class="d">
-    <p>I'm also a member of the feminist hackspace <a href="">Heart of Code</a>. If you're town come by, say hi, and have a beverage with us!</p>
-  </div>
 </div>
 
 {% endblock content %}

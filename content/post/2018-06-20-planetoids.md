@@ -7,5 +7,5 @@ web = ""
 code = "https://gitlab.com/lislis/planetoids-ahoy"
 [taxonomies]
 tags = ["vueJs", "space"]
-categories = ["project"]
+category = ["project"]
 +++

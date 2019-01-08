@@ -1,32 +1,41 @@
 .wrapper
   display: grid
   grid-column-gap: 4re
-  grid-template-columns: 1fr 200px
-  grid-template-rows: 300px 1fr 170px
+  grid-template-columns: 1fr
+  grid-template-rows: 120px 270px 1fr 170px
   min-height: 100vh
   padding: 2rem
 
-  max-width: 1600px
+  max-width: $l-mw
   margin: auto
 
-  @media (min-width: 600px)
+  @media (min-width: $bp-md)
     grid-column-gap: 8rem
-    grid-template-columns: 1fr 300px
+    grid-template-columns: 1fr 130px
     grid-template-rows: 120px 1fr 170px
+  @media (min-width: $bp-lg)
+    grid-template-columns: 1fr 200px
 
 .header
-  grid-area: 1 / 1
-  h1
-    text-align: right
+  @media (min-width: $bp-md)
+    grid-area: 1 / 1
+    h1
+      text-align: right
 
 .main
-  grid-area: 1 span / 1
+  grid-area: 3 / 1
+  @media (min-width: $bp-md)
+    grid-area: 1 span / 1
 
 .nav
-  grid-area: 1 span / 2
+  grid-area: 2 / 1
+  @media (min-width: $bp-md)
+    grid-area: 1 span / 2
 
 .footer
-  grid-area: 3 / 2
+  grid-area: 4 / 1
+  @media (min-width: $bp-md)
+    grid-area: 3 / 2
 
 
 .list
