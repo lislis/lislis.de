@@ -5,7 +5,7 @@
 {% endblock heading %}
 
 {% block content %}
-<ul>
+<ul class="post-list">
   {% for page in term.pages %}
   <li>
     <time datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>

@@ -15,24 +15,33 @@
 {% block heading %}
 {% if page.taxonomies.category %}
 {% for cat in page.taxonomies.category %}
-<h1>{{ cat | capitalize }}</h1>
+<p class="h1">{{ cat | capitalize }}</p>
 {% endfor %}
 {% endif %}
 {% endblock heading %}
 
 {% block content %}
-<article>
-  <h1>{{ page.title }}</h1>
-  {% if page.date %}
-  <time datetime="{{page.date}}">{{page.date | date(format="%B %d, %Y")}}</time>
-  {% endif %}
-  {% if page.taxonomies.tags %}
-  in
-  {% for tag in page.taxonomies.tags %}
-  {% set tagname = tag %}
-  <a href="">#{{ tag }}</a>
-  {% endfor %}
-  {% endif %}
-  <p>{{page.word_count}} {{page.reading_time}}</p>
+<article class="post">
+  <header>
+    <h1 class="post__title">{{ page.title }}</h1>
+    <p>
+    {% if page.date %}
+    <time datetime="{{page.date}}">{{page.date | date(format="%B %d, %Y")}}</time>
+    {% endif %}
+    {% if page.taxonomies.tags %}
+    in
+    {% for tag in page.taxonomies.tags %}
+    {% set url = get_taxonomy_url(kind="tags", name=tag) %}
+    <a href="{{url}}">#{{ tag }}</a>{% if loop.last == false %},{% endif %}
+    {% endfor %}
+    {% endif %}
+    </p>
+    {% if page.reading_time > 1 %}
+    <aside>{{page.reading_time }}min reading time</aside>
+    {% endif %}
+  </header>
+  <div class="post__body">
+    {{page.content | safe}}
+  </div>
 </article>
 {% endblock content %}

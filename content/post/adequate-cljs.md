@@ -1,15 +1,18 @@
 +++
 title = "An adequate introduction to ClojureScript"
-date = 2017-02-28
+date = 2017-10-14
 draft = false
 [taxonomies]
-tags = []
+tags = ["ClojureScript", "JS"]
 category = ["talk"]
-[extra]
-conference = "RuhrJS"
-year = 2017
-slides = "https://lislis.de/talks/adequate-cljs/"
-code="https://github.com/lislis/adequate-clojurescript"
 +++
 
-Ruhr
+
+Given at [RuhrJS 2017](https://2017.ruhrjs.de/).
+
+An introduction to ClojureScript for JavaScript people.
+
+[Live slides](https://lislis.de/talks/adequate-cljs/) and [code for slides]("https://github.com/lislis/adequate-clojurescript).
+
+
+{{ youtube(id="bl7BaLcjg0A") }}
