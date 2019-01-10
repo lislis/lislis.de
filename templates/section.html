@@ -8,10 +8,12 @@
 
 
 {% block content %}
-<div class="blog">
-  <ul>
-    {% for page in section.pages | reverse %}
-    <li>{{page.date}} - <a href="{{ page.permalink }}">{{page.title}}</a> </li>
+<div>
+  <ul class="post-list">
+    {% for page in section.pages %}
+    <li>
+      <time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d") }}</time> -
+      <a href="{{ page.permalink }}">{{page.title}}</a></li>
     {% endfor %}
   </ul>
 </div>

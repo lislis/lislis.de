@@ -1,10 +1,16 @@
 +++
 title = "The remotiest workflow"
-[extra]
-conference = "Hybrid Conf"
-year = 2016
-slides = "https://lislis.de/talks/remotiest/"
-code=""
+date = 2016-08-18
+draft = false
+[taxonomies]
+tags = ["worklife"]
+category = ["talk"]
 +++
 
-private repo :/
+A talk about how Justine and I work together across timezones and cultures at Travis CI.
+
+Given at [HybridConf 2016 in Berlin](https://hybridconf.net/schedule)
+
+[Live slides](https://lislis.de/talks/remotiest/#/).
+
+[Funny sketch of us and whales](https://twitter.com/taomodachi/status/766389321440133120)

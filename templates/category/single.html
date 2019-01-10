@@ -8,7 +8,7 @@
 <ul class="post-list">
   {% for page in term.pages %}
   <li>
-    <time datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+    <time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d") }}</time> -
     <a href="{{ page.permalink }}">{{ page.title }}</a>
   </li>
   {% endfor %}
