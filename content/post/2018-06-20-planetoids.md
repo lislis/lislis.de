@@ -2,10 +2,11 @@
 title = "Planetoids, ahoy!"
 description = ""
 date = 2018-06-20
-draft = false
-web = ""
-code = "https://gitlab.com/lislis/planetoids-ahoy"
+draft = true
 [taxonomies]
-tags = ["vueJs", "space"]
+tags = []
 category = ["project"]
 +++
+
+
+[Live site]() and [code for the project](https://gitlab.com/lislis/planetoids-ahoy).
