@@ -13,6 +13,9 @@
     {% for page in section.pages %}
     <li>
       <time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d") }}</time> -
+      {% for cat in page.taxonomies.category %}
+      <a href="{{ get_taxonomy_url(kind="category", name=cat)}}">{{cat | capitalize}}</a>
+      {% endfor %} -
       <a href="{{ page.permalink }}">{{page.title}}</a></li>
     {% endfor %}
   </ul>
