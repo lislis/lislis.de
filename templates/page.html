@@ -14,9 +14,11 @@
 
 {% block heading %}
 {% if page.taxonomies.category %}
-{% for cat in page.taxonomies.category %}
-<p class="h1">{{ cat | capitalize }}</p>
-{% endfor %}
+<p class="h1">
+  {% for cat in page.taxonomies.category %}
+  {{ cat | capitalize }}
+  {% endfor %}
+</p>
 {% endif %}
 {% endblock heading %}
 
