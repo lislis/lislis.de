@@ -38,27 +38,33 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
+      <div><header class="header">
         {% block heading %}{% endblock heading %}
+        <a href="#nav" class="sr sr-focusable skiplink" aria-label="Skip content and go to navigation">Skip to navigation</a>
       </header>
-      <main class="main">
+      </div>
+
+      <main class="main" id="content" tab-index="-1" aria-label="main content">
           {% block content %}{% endblock content %}
       </main>
-      <nav class="nav">
-        <ul>
-          <li><a href="{{ get_url(path="/") }}">lislis.de</a></li>
-          <li><a href="{{ get_taxonomy_url(kind="category", name="blog") }}">Blog</a></li>
-          <li><a href="{{ get_taxonomy_url(kind="category", name="project") }}">Projects</a></li>
-          <li><a href="{{ get_taxonomy_url(kind="category", name="game") }}">Games</a></li>
-          <li><a href="{{ get_taxonomy_url(kind="category", name="talk") }}">Talks</a></li>
-        </ul>
-      </nav>
-      <footer class="footer">
-        <hr>
-        <div class="sidenote">
-          <p>Content created by <a xmlns:cc="http://creativecommons.org/ns#" href="https://lislis.de" property="cc:attributionName" rel="cc:attributionURL">lislis</a> is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> unless otherwise noted.</p>
-        </div>
-      </footer>
+      <div class="sidebar">
+        <nav class="nav" id="nav" tab-index="-1" aria-label="main navigation">
+          <ul>
+            <li><a href="{{ get_url(path="/") }}" title="Home page">lislis.de</a></li>
+            <li><a href="{{ get_taxonomy_url(kind="category", name="blog") }}">Blog</a></li>
+            <li><a href="{{ get_taxonomy_url(kind="category", name="project") }}">Projects</a></li>
+            <li><a href="{{ get_taxonomy_url(kind="category", name="game") }}">Games</a></li>
+            <li><a href="{{ get_taxonomy_url(kind="category", name="talk") }}">Talks</a></li>
+          </ul>
+          <a href="#content" class="sr sr-focusable skiplink" aria-label="Jump back to main content">Jump to content</a>
+        </nav>
+        <footer class="footer">
+          <hr>
+          <div class="sidenote" aria-label="Content license note">
+            <p>Content created by <a xmlns:cc="http://creativecommons.org/ns#" href="https://lislis.de" property="cc:attributionName" rel="cc:attributionURL">lislis</a> is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> unless otherwise noted.</p>
+          </div>
+        </footer>
+      </div>
     </div>
   </body>
 </html>

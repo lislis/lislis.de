@@ -2,17 +2,16 @@
   display: grid
   grid-column-gap: 4re
   grid-template-columns: 1fr
-  grid-template-rows: 120px 270px 1fr 170px
+  grid-template-rows: 120px 270px 1fr
   min-height: 100vh
   padding: 2rem
-
   max-width: $l-mw
   margin: auto
 
   @media (min-width: $bp-md)
     grid-column-gap: 8rem
     grid-template-columns: 1fr 130px
-    grid-template-rows: 120px 1fr 170px
+    grid-template-rows: 120px 1fr
   @media (min-width: $bp-lg)
     grid-template-columns: 1fr 200px
 
@@ -25,19 +24,28 @@
 
 .main
   grid-area: 3 / 1
+  margin-top: 4rem
   @media (min-width: $bp-md)
     grid-area: 1 span / 1
+    margin-top: 0
 
-.nav
+.sidebar
   grid-area: 2 / 1
+  display: flex
+  flex-direction: row
+  align-items: last baseline;
   @media (min-width: $bp-md)
     grid-area: 1 span / 2
+    flex-direction: column
+
+.nav
+  flex-grow: 1
+  flex-basis: 70%
+  align-self: flex-start
 
 .footer
-  grid-area: 4 / 1
-  @media (min-width: $bp-md)
-    grid-area: 3 / 2
-
+  flex-shrink: 1
+  flex-basis: 9rem
 
 .list
   li
