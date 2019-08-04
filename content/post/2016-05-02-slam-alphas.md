@@ -3,7 +3,7 @@ title = "Slam Alphas"
 date = 2016-05-02
 draft = false
 [taxonomies]
-tags = ["Ruby", "Rails", "Wordpress"]
+tags = ["ruby", "rails", "wordpress"]
 category = ["project"]
 +++
 

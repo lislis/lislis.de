@@ -9,30 +9,30 @@
 {% block content %}
 <div class="index">
   <div class="a">
-    <p>On the internet, and sometimes in the physical world, I go by the name <code>lislis</code>.</p>
-    <p>I earn a living as a full-stack developer with focus on frontend.<br>
+    <p>On the internet and (sometimes) in the physical world, I go by the name <code>lislis</code>.</p>
+    <p>I earn money as a full-stack developer / technical person with focus on frontend.<br>
       Besides wage-labour I also enjoy creative coding, making video games and activism.</p>
   </div>
 
   <div class="b">
     <p>Email is usually the best way to reach me, just holler at <code>mail at lislis dot de</code>.</p>
-    <p>If you want to get into my cool book you should encrypt your email. Here is my <a href="https://pgp.mit.edu/pks/lookup?op=get&search={{ config.extra.keyid }}">public key</a>.</br> In all seriousness though, you should encrypt your email.</p>
+    <p>If you want to get into my cool book you should encrypt your email. Here is my <a href="https://pgp.mit.edu/pks/lookup?op=get&search={{ config.extra.keyid }}">public key</a>.</br> In all seriousness though, the (internet) world can be a dark place and you should encrypt your email.</p>
     <p>In case you don't know what email encryption is or how it works you might want to try out a <a href="{{ config.extra.cryptoparty }}">CryptoParty</a>.</p>
   </div>
 
   <div class="d">
-    <p>Advocating open source software, decentralized infrastructure and encryption is something of a hobby.</p>
-    <p>You can find my code on either <a href="{{ config.extra.github }}">GitHub</a> or <a href="{{ config.extra.gitlab }}">GitLab</a> and myself on decentralised social media such as <a href="{{ config.extra.diaspora}}">diaspora*</a> and <a href="{{ config.extra.mastodon }}">Mastodon</a>.</p>
+    <p>Advocating open source software, decentralized infrastructurem, encryption and feminist technologies is something of a hobby.</p>
+    <p>You can find my code on either <a href="{{ config.extra.github }}">GitHub</a> or <a href="{{ config.extra.gitlab }}">GitLab</a> and myself on decentralized social media such as<a href="{{ config.extra.mastodon }}">Mastodon</a> and <a href="{{ config.extra.diaspora}}">diaspora*</a>.</p>
   </div>
 
   <div class="e">
+    <p>I create (more or less complete) video games at game jams or hackathons. You can browse <a href="{{ get_taxonomy_url(kind="category", name="game") }}">some of my games here</a>.</p>
+    <p>Meetups and conferences let me speak in front of people. Here is a list of <a href="{{ get_taxonomy_url(kind="category", name="talk") }}">my talks</a> for your enjoyment.</p>
     <p>I try to regularly write <a href="{{ get_taxonomy_url(kind="category", name="blog") }}">on my blog</a>. More or less successfully.</p>
-    <p>Sometimes I create imcomplete video games at game jams or hackathons. You can browse <a href="{{ get_taxonomy_url(kind="category", name="game") }}">some of my games here</a>.</p>
-    <p>Some meetups and conferences let me speak in front of people. Here is a list of <a href="{{ get_taxonomy_url(kind="category", name="talk") }}">my talks</a> for your enjoyment.</p>
   </div>
 
   <div class="f">
-    <p>I'm also a member of the feminist hackspace <a href="{{ config.extra.heartofcode }}">Heart of Code</a>. If you're town come by, say hi, and have a beverage with us!</p>
+    <p>I'm also a member of the feminist hackspace for women* called <a href="{{ config.extra.heartofcode }}">Heart of Code</a>. If you're town (Berlin that is) come by, say hi, and chat with us!</p>
   </div>
 
   <div class="c">
@@ -41,7 +41,7 @@
       <li><a href="{{ config.extra.slamalphas }}">Slam Alphas</a> is a blog and database for women in the German speaking poetry slam scene.</li>
       <li><a href="{{ config.extra.rorganize }}">RoRganize.it</a> is a platform for finding and orginizing programming study groups. Made at <a href="{{ config.extra.rubycorns }}">Rubycorns</a>.</li>
     </ul>
-    <p>My brain also makes me output a lot of <a href="{{ get_taxonomy_url(kind="category", name="project") }}">other side projects</a>.</p>
+    <p>I channel my brain's strange ideas into <a href="{{ get_taxonomy_url(kind="category", name="project") }}">other side projects</a>.</p>
   </div>
 
 </div>

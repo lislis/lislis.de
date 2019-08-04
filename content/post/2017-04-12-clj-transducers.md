@@ -11,6 +11,6 @@ Lightning talk originally written for the [Berlin Clojure meetup](https://www.me
 
 [Live slides](https://lislis.de/talks/clj-transducer/) and [code for slides](https://github.com/lislis/clj-transducer).
 
-[Funny tweet by @chastell](https://twitter.com/chastell/status/884033801055338496)
+[Funny tweet by @chastell@twitter.com](https://twitter.com/chastell/status/884033801055338496)
 
 Fun fact: Though it's hard to hear, I dubbed Dr Scot into saying 'Clojure transducer' instead of 'Sonic transducer'. All in all probably the best talk I've written because RHPS <3

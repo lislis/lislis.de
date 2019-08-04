@@ -3,7 +3,7 @@ title = "Sara vs coffee"
 date = 2015-05-17
 draft = false
 [taxonomies]
-tags = ["Ruby", "gosu"]
+tags = ["ruby", "gosu"]
 category = ["game"]
 +++
 
