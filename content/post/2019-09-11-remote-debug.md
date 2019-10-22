@@ -1,5 +1,5 @@
 +++
-title = "REmote Debugging webXR"
+title = "Remote Debugging webXR"
 date = 2019-09-11
 draft = true
 [taxonomies]
