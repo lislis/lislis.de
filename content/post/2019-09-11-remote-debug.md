@@ -1,7 +1,7 @@
 +++
 title = "Remote Debugging webXR"
 date = 2019-09-11
-draft = true
+draft = false
 [taxonomies]
 tags = ["webXR", "aframe", "firefox", "android"]
 category = ["blog"]

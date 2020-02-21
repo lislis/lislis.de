@@ -25,7 +25,6 @@
     <link href="{{ get_url(path="rss.xml") }}" rel="feed" type="application/rss+xml" title="{{ config.title }}" />
 
 
-
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -38,33 +37,40 @@
   </head>
   <body>
     <div class="wrapper">
-      <div><header class="header">
-        {% block heading %}{% endblock heading %}
-        <a href="#nav" class="sr sr-focusable skiplink" aria-label="Skip content and go to navigation">Skip to navigation</a>
-      </header>
-      </div>
+      <a href="#content" class="sr sr-focusable skiplink" aria-label="Skip navigation and go to content">Skip to content</a>
 
-      <main class="main" id="content" tab-index="-1" aria-label="main content">
-          {% block content %}{% endblock content %}
-      </main>
-      <div class="sidebar">
-        <nav class="nav" id="nav" tab-index="-1" aria-label="main navigation">
-          <ul>
-            <li><a href="{{ get_url(path="/") }}" title="Home page">lislis.de</a></li>
+      <div class="l__nav">
+        <nav id="nav">
+          <a href="{{ get_url(path="/") }}" title="Home page" class="logo">lislis.de</a>
+          <input type="checkbox" id="menu-toggle" class="c__menutoggle sr">
+          <label for="menu-toggle" tabindex="-1" class="c__menulabel">Menu</label>
+          <ul class="c__menu">
             <li><a href="{{ get_taxonomy_url(kind="category", name="blog") }}">Blog</a></li>
             <li><a href="{{ get_taxonomy_url(kind="category", name="project") }}">Projects</a></li>
             <li><a href="{{ get_taxonomy_url(kind="category", name="game") }}">Games</a></li>
             <li><a href="{{ get_taxonomy_url(kind="category", name="talk") }}">Talks</a></li>
           </ul>
-          <a href="#content" class="sr sr-focusable skiplink" aria-label="Jump back to main content">Jump to content</a>
         </nav>
-        <footer class="footer">
-          <hr>
-          <div class="sidenote" aria-label="Content license note">
-            <p>Content created by <a xmlns:cc="http://creativecommons.org/ns#" href="https://lislis.de" property="cc:attributionName" rel="cc:attributionURL">lislis</a> is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> unless otherwise noted.</p>
-          </div>
-        </footer>
       </div>
+
+      <div class="l__visual">
+        {% block heading %}{% endblock heading %}
+      </div>
+
+      <main class="l__main" id="content" tabindex="-1" aria-label="main content">
+
+        {% block content %}{% endblock content %}
+
+        <a href="#content" class="sr sr-focusable skiplink" aria-label="Jump back to main content">Jump to content</a>
+      </main>
+
+      <footer class="l__footer">
+        <div class="sidenote" aria-label="Content license note">
+          <p>Content created by <a xmlns:cc="http://creativecommons.org/ns#" href="https://lislis.de" property="cc:attributionName" rel="cc:attributionURL">lislis</a> is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> unless otherwise noted.</p>
+        </div>
+      </footer>
+      <a href="#nav" class="sr sr-focusable skiplink" aria-label="Jump up to navigation">Jump to navigation</a>
+
     </div>
   </body>
 </html>

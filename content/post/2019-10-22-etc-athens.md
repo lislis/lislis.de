@@ -1,7 +1,7 @@
 +++
 title = "/ETC in Athens"
 date = 2019-10-22
-draft = true
+draft = false
 [taxonomies]
 tags = ["etc"]
 category = ["blog"]

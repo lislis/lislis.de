@@ -14,9 +14,9 @@
 
 {% block heading %}
 {% if page.taxonomies.category %}
-<p class="h1">
+<p class="visual__title">
   {% for cat in page.taxonomies.category %}
-  {{ cat | capitalize }}
+  {{ cat | capitalize }}{% if loop.last == false %},{% endif %}
   {% endfor %}
 </p>
 {% endif %}
@@ -26,24 +26,23 @@
 <article class="post">
   <header>
     <h1 class="post__title">{{ page.title }}</h1>
-    <p>
+    <p class="post__meta">
     {% if page.date %}
     <time datetime="{{page.date}}">{{page.date | date(format="%B %d, %Y")}}</time>
     {% endif %}
-    {% if page.taxonomies.tags %}
-    in
-    {% for tag in page.taxonomies.tags %}
-    {% set url = get_taxonomy_url(kind="tags", name=tag) %}
-    <a href="{{url}}">#{{ tag }}</a>{% if loop.last == false %},{% endif %}
-    {% endfor %}
-    {% endif %}
     </p>
-    {% if page.reading_time > 1 %}
-    <aside>{{page.reading_time }}min reading time</aside>
-    {% endif %}
   </header>
   <div class="post__body">
     {{page.content | safe}}
   </div>
+  <footer class="post__footer">
+    {% if page.taxonomies.tags %}
+    Tagged
+    {% for tag in page.taxonomies.tags %}
+    {% set url = get_taxonomy_url(kind="tags", name=tag) %}
+    <a href="{{url}}" class="c__tag">#{{ tag }}</a>{% if loop.last == false %},{% endif %}
+    {% endfor %}
+    {% endif %}
+  </footer>
 </article>
 {% endblock content %}

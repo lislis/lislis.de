@@ -3,15 +3,156 @@
 @import "vars"
 @import "a11y"
 @import "base"
-@import "layout"
-@import "layout-index"
-@import "nav"
 @import "components/post"
 @import "components/post-list"
 @import "components/youtube"
+@import "components/gallery"
+@import "components/tags"
+
+$space: 1.6rem
+
 
 .sidenote
-  font-size: 0.8rem
+  font-size: 0.9rem
 
 .ta-c
   text-align: center
+
+.c__menu
+  padding-left: 0
+  list-style: none
+  li
+    margin-bottom: 1rem
+  a
+    display: block
+    font-weight: 600
+    text-transform: uppercase
+    font-size: 1.3rem
+    border: none
+    &:before
+      content: ""
+      display: inline-block
+      width: 8px
+      height: 8px
+      margin-right: .6rem
+      vertical-align: middle
+      background-color: $primary
+    &:hover,
+    &:active
+      color: $secondary
+      &:before
+        background-color: $secondary
+
+.logo
+  font-weight: 600
+  border: none
+  font-size: 1.3rem
+
+.c__menulabel
+  display: block
+  cursor: pointer
+  width: $space * 2
+  height: $space * 2
+  display: inline-block
+  background-color: $primary
+  text-indent: 999rem
+  overflow: hidden
+  border: solid 16px $secondary
+  transition: border-width 80ms ease-in
+  &:focus
+    outline: 1px dotted currentColor
+  @media (min-width: $bp-lg)
+    display: none
+
+.c__menutoggle:checked ~ .c__menulabel
+  border: solid 8px $secondary
+
+.l__visual
+  //height: 10vh
+  background-color: hotpink
+  margin: 1.6rem -3.2rem
+  padding: 0 3.2rem
+
+  @media (min-width: $bp-md)
+    margin: -1.6rem -1.6rem -1.6rem 0
+    padding: 0
+    grid-row: 1 / 4
+    grid-column: 2
+    text-align: center
+
+  .visual__title
+    display: inline-block
+    margin-top: $space * 1.5
+    padding: .2em
+    font-size: 3rem
+    font-weight: 600
+    background-color: rgba($black, 0.8)
+    line-height: 1
+
+
+.l__footer
+  margin-top: $space * 2
+
+
+.c__menutoggle ~ .c__menu
+  display: none
+  @media (min-width: $bp-lg)
+    display: flex
+
+
+.c__menutoggle:checked ~ .c__menu
+  display: flex
+  flex-direction: column
+
+.l__main,
+.l__nav,
+.l__footer
+  @media (min-width: $bp-lg)
+    padding: $space
+
+
+.l__nav
+  nav
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+  .logo
+    flex-grow: 1
+  .c__menu
+    flex-basis: 100%
+  @media (min-width: $bp-md)
+    margin-bottom: $space * 2
+  @media (min-width: $bp-lg)
+    flex-wrap: no-wrap
+    margin-bottom: 0
+    .logo
+      flex-grow: 2
+    .c__menu
+      flex-basis: auto
+      flex-grow: 1
+      justify-content: space-between
+      margin: 0
+      li
+        margin: 0
+      a:before
+        //content: none
+
+
+
+.wrapper
+  display: grid
+  grid-column-gap: $space * 1.5
+  grid-template-columns: 1fr
+  grid-template-rows: auto 35vh 1fr auto
+  min-height: 100vh
+  padding: $space
+  //max-width: $l-mw
+  margin: auto
+
+  @media (min-width: $bp-md)
+    //grid-column-gap: 8rem
+    grid-template-columns: 1fr 25vw
+    grid-template-rows: auto 1fr auto
+  @media (min-width: $bp-lg)
+    grid-template-columns: 1fr 30vw

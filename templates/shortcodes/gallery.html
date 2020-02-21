@@ -1,0 +1,16 @@
+<div class="c__gallery">
+  <ul>
+    {% if items %}
+    {% for i in items %}
+    <li>
+      <img src="//placekitten.com/300/300" alt="foo">
+      <div class="c__gallery__content">
+      <h3>{{i}}</h3>
+      <a href="#">Read more about {{i}}</a>
+      </div>
+    </li>
+    {% endfor %}
+    {% endif  %}
+  </ul>
+  <a href="#">See more of </a>
+</div>
