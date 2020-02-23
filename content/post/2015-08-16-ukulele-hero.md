@@ -19,7 +19,7 @@ Given at [Reject.JS 2015](http://rejectjs.org/) in Berlin.
 
 [Live slides](https://lislis.de/talks/ukulele-hero) and [code for slides](https://github.com/lislis/ukulele-hero-slides).
 
-[There is also a post about the game](./post/2015-08-16-ukulele-hero.md).
+[There is also a post about the game](@/post/2015-08-16-ukulele-hero.md).
 
 
 {{ youtube(id="xiX8jf2NajQ") }}

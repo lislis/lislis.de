@@ -17,10 +17,10 @@ Why Clojure(Script)? Because [Heart of Clojure](https://heartofclojure.eu) is a 
 
 ClojureScript also has some nice features around hot code reloading and a browser REPL which make interactive browser things waaay more interesting!
 
-[Live slides]() and [code for slides]().
+[Live slides](#) and [code for slides](#).
 
-[Code for FigFrag]() my shader live editing environment prototype.
+[Code for FigFrag](#) my shader live editing environment prototype.
 
-[Sketchnote by Joy Clark]()
+[Sketchnote by Joy Clark](#)
 
-Fun fact: before FigFrag came [shady Yard](), a bootstrapped ClojureScript environment. But I ditchhed it because I thought it was too similar to [editor.bookofshaders.org]().
+Fun fact: before FigFrag came [shady Yard](#), a bootstrapped ClojureScript environment. But I ditchhed it because I thought it was too similar to [editor.bookofshaders.org](#).
