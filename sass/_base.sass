@@ -9,20 +9,47 @@
 *, *:after, *:before
   box-sizing: border-box
 
+::-webkit-scrollbar
+  width: 8px;  /* for vertical scrollbars */
+  height: 8px; /* for horizontal scrollbars */
+
+::-webkit-scrollbar-track
+  background: $black
+
+::-webkit-scrollbar-thumb
+  background: $primary
+
+
 body
   font-size: 1.4rem
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif
   line-height: 1.65
   background-color: $black
   color: $yellow
+  overflow-x: hidden
   overflow-y: scroll
 
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004)
+  text-rendering: optimizeLegibility !important
+  -webkit-font-smoothing: antialiased !important
+  -moz-osx-font-smoothing: grayscale
+  -webkit-hyphens: auto
+  hyphens: auto
+  -webkit-hyphenate-limit-chars: auto 5
+  -webkit-hyphenate-limit-lines: 2
+  hyphenate-limit-chars: auto 5
+  hyphenate-limit-lines: 2
+  scroll-behavior: smooth
+  scrollbar-color: $primary $highlight // ???
+  scrollbar-width: thin // ??
+
 a
-  color: #cc6633
+  color: $secondary
   text-decoration: none
   border-bottom: 1px solid currentColor
   text-transform: uppercase
   font-size: 0.8em
+  font-weight: 500
   &:hover,
   &:active
     border-width: 2px

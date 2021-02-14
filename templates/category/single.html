@@ -11,7 +11,25 @@
 {% block content %}
 <ul class="post-list">
   {% for page in term.pages %}
-  <li>
+  <li class="post__item post__item-index-{{loop.index}}">
+
+    {% if loop.index < 4 %}
+
+    <div class="teaserlist__item__wrapper">
+      <a href="{{ page.permalink }}">
+        {% if page.extra.featured_image %}
+        <img class="teaserlist__image" src="{{ page.extra.featured_image}}" alt="{{ page.extra.feature_image_alt}}">
+        {% else %}
+        <img class="teaserlist__image" src="https://placekitten.com/300/200" alt="">
+        {% endif  %}
+      </a>
+      <div class="teaserlist__item__content">
+        <h3 class="teaserlist__title"><a href="{{ page.permalink }}">{{ page.title}}</a></h3>
+      </div>
+    </div>
+
+    {% endif %}
+
     <time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d") }}</time> -
     <a href="{{ page.permalink }}">{{ page.title }}</a>
   </li>

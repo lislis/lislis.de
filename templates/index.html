@@ -8,8 +8,47 @@
 
 {% block content %}
 <div>
-  <div>
+  <div class="index__intro index__section">
     {{ section.content | safe}}
+  </div>
+  <div class="index__sections">
+    {% set categories = get_taxonomy(kind="category") %}
+    {% for cat in categories.items %}
+    <section class="index__section">
+      <h2 class="index__section-title">{{cat.name}}</h2>
+      <ul class="teaserlist">
+        {% for s in section.subsections %}
+        {% set sect = get_section(path=s) %}
+
+        {% set_global teaser_counter = 0 %}
+        {% for p in sect.pages %}
+
+        {% if p.taxonomies %}
+        {% if cat.name in p.taxonomies.category and teaser_counter <= 3 %}
+        <li class="teaserlist__item">
+          <div class="teaserlist__item__wrapper">
+            <a href="{{ p.permalink }}">
+              {% if  p.extra.featured_image %}
+              <img class="teaserlist__image" src="{{ p.extra.featured_image}}" alt="{{ p.extra.feature_image_alt}}">
+              {% else %}
+              <img class="teaserlist__image" src="https://placekitten.com/300/200" alt="">
+              {% endif  %}
+            </a>
+            <div class="teaserlist__item__content">
+              <h3 class="teaserlist__title"><a href="{{ p.permalink }}">{{ p.title}}</a></h3>
+
+            </div>
+          </div>
+        </li>
+        {% set_global teaser_counter = teaser_counter + 1 %}
+        {% endif  %}
+        {% endif  %}
+        {% endfor  %}
+        {% endfor %}
+      </ul>
+      <p class="index__section-footer">See everything in <a href="{{ get_taxonomy_url(kind="category", name=cat.name) }}">{{cat.name}}</a> ⇝</p>
+    </section>
+    {% endfor %}
   </div>
 </div>
 {% endblock content %}

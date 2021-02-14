@@ -12,6 +12,7 @@
   <ul class="post-list">
     {% for page in section.pages %}
     <li>
+
       <time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d") }}</time> -
       {% if page.taxonomies.category %}
       {% for cat in page.taxonomies.category %}

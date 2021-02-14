@@ -1,0 +1,72 @@
+.index__intro
+  @media (min-width: $bp-lg)
+    column-count: 2
+    columns-width: 50%
+    column-gap: 2rem
+    p:first-of-type
+      margin-top: 0
+
+
+.index__section
+  margin-bottom: 10rem
+
+.index__section-title
+  margin: 0
+  text-transform: uppercase
+  line-height: 1.4
+  margin-bottom: 2.4rem
+  border-bottom: 1px solid currentColor
+
+.index__section-footer
+  margin: 0.6rem 0 0
+  padding: 0.8rem 0 0
+  border-top: 1px solid currentColor
+
+.teaserlist
+  display: flex
+  flex-flow: row wrap
+  margin: -1rem
+  padding: 0
+  list-style: none
+
+.teaserlist__item__wrapper
+  margin: 0 1rem 1rem
+  transition: 200ms background ease-in-out, 210ms color ease-in-out
+  overflow: hidden
+  &:hover,
+  &:active
+    background-color: $primary
+    color: $black
+    .teaserlist__image
+      transform: scale(1.05)
+      filter: grayscale(1) contrast(1.6)
+    .teaserlist__item__content
+      a
+        color: currentColor
+
+
+.teaserlist__item
+  flex: 1 1 20rem
+  margin-bottom: 1rem
+
+.teaserlist__image
+  display: block
+  width: 100%
+  height: auto
+  transform-origin: bottom center
+  transition: 200ms transform ease-in-out, 200ms filter ease-in-out
+  filter: grayscale(1) contrast(1.2)
+  opacity: 0.6
+  a
+    display: block
+
+.teaserlist__title
+  margin: 0
+  font-size: 1.6rem
+  line-height: 1.1
+
+.teaserlist__item__content
+  a
+    display: block
+    padding: 1rem
+    border: none

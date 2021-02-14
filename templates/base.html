@@ -16,6 +16,10 @@
     <meta property="og:site_name" content="{{ config.title }}">
     {% endblock meta %}
 
+    {% block rss %}
+    <link rel="alternate" type="application/atom+xml" title="Feed" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+    {% endblock %}
+
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
     <link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path="favicon-192x192.png") }}">
