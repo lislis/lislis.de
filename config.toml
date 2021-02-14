@@ -7,11 +7,7 @@ default_language = "en"
 compile_sass = true
 
 # Whether to generate a RSS feed automatically
-generate_rss = true
-
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Gutenberg
-highlight_code = true
+generate_feed = true
 
 title = "lislis.de"
 
@@ -19,6 +15,9 @@ taxonomies = [
   {name = "tags", rss = true},
   {name = "category", rss = true},
 ]
+
+[markdown]
+highlight_code = true
 
 [extra]
 # Put all your custom variables here
