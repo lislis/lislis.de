@@ -7,6 +7,13 @@ tags = ["schoolofma", ""]
 category = ["blog"]
 +++
 
+https://github.com/lawreka/aiArtAULA2020
+https://ml4a.github.io/guides/
+https://aiartists.org/ai-generated-art-tools
+
+https://kathrynisabelle.com/loaf-ai
+
+
 ## Style Transfer
 https://www.tensorflow.org/tutorials/generative/style_transfer
 https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/generative/style_transfer.ipynb#scrollTo=eqxUicSPUOP6

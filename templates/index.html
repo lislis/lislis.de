@@ -14,8 +14,8 @@
   <div class="index__sections">
     {% set categories = get_taxonomy(kind="category") %}
     {% for cat in categories.items %}
-    <section class="index__section">
-      <h2 class="index__section-title">{{cat.name}}</h2>
+      <section class="index__section">
+      <h2 class="index__section-title">{{cat.name}}{% if cat.name != 'blog'%}s{% endif %}</h2>
       <ul class="teaserlist">
         {% for s in section.subsections %}
         {% set sect = get_section(path=s) %}
@@ -46,7 +46,7 @@
         {% endfor  %}
         {% endfor %}
       </ul>
-      <p class="index__section-footer">See everything in <a href="{{ get_taxonomy_url(kind="category", name=cat.name) }}">{{cat.name}}</a> ⇝</p>
+      <p class="index__section-footer">See everything in <a href="{{ get_taxonomy_url(kind="category", name=cat.name) }}">{{cat.name}}{% if cat.name != 'blog'%}s{% endif %}</a> &#10172;</p>
     </section>
     {% endfor %}
   </div>

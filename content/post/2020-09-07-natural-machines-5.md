@@ -62,6 +62,11 @@ Alba G Corral
 LIA https://www.liaworks.com/
 
 
+Gene Kogan
+
+https://ml4a.github.io/
+
+
 ## ml5
 
 https://ml5js.org
